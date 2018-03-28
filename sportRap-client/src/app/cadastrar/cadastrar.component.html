@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <div class="container">
-    <div class="formulario">
+<div class="_container">
+  <div class="formulario">
+    <div class="cadastro">
+      <br>
+      <h3>Brilhe nas competições<br> Cadastre-se, é de graça!</h3>
+      <form>
+        <br>Nome<br>
+        <input type="text" name="firstname">
 
-        <form class="cadastro">
-          Nome<br>
-          <input type="text" name="firstname">
-          <br>
-          Sobrenome<br>
-          <input type="text" name="lastname">
-          <br>
-          E-mail<br>
-          <input type="text" name="firstname">
-          <br>
-          Senha(6 ou mais caracteres)<br>
-          <input type="text" name="lastname">
-          <br><br>
-          Ao clicar em Cadastre-se você aceita o Contrato de<br>
-          Usuário e Termos de Condições de Uso.
-          <input type="submit" value="Submit">
-        </form>
+        <br><br>Sobrenome<br>
+        <input type="text" name="lastname">
+
+        <br><br>E-mail<br>
+        <input type="text" name="firstname">
+
+        <br><br>Senha(6 ou mais caracteres)<br>
+        <input type="text" name="lastname">
+
+        <br><p>
+        Ao clicar em Cadastre-se você aceita o Contrato de
+        Usuário e Termos de Condições de Uso.</p>
+
+
+        <input type="submit" value="Cadastre-se agora" ng-model="myVar">
+        <div [hidden]="!myVar">
+          <h1>Welcome</h1>
+          <p>Welcome to my home.</p>
+        </div>
+      </form>
     </div>
   </div>
-</html>
+</div>
