@@ -7,13 +7,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { TelainicialComponent } from './telainicial/telainicial.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    TelainicialComponent
   ],
   imports: [
     HttpModule,

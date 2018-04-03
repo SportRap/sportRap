@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class AuthService {
     public token: string;
-    private url = 'http://localhost:4040/apiv1/auth/login';
+    private url = 'http://localhost:8000/usuario/login';
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private options = new RequestOptions({ headers: this.headers });
 
@@ -16,8 +16,8 @@ export class AuthService {
         this.token = currentUser && currentUser.token;
     }
 
-    login(username, password): Observable<boolean> {
-        let body = JSON.stringify({ username: username, password: password });
+    login(email, password): Observable<boolean> {
+        let body = JSON.stringify({ email: email, password: password });
         return this.http.post(this.url, body, this.options)
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
@@ -26,7 +26,7 @@ export class AuthService {
                     // Atribui a propriedade token
                     this.token = token;
                     //Armazenar o nome de usuário e jwt token no local store para manter o usuário conectado entre as atualizações de página
-                    localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
+                    localStorage.setItem('currentUser', JSON.stringify({ email: email, token: token }));
 
                     // Returna verdadeiro para indicar o login bem-sucedido
                     return true;
