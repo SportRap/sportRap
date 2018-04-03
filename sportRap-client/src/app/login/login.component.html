@@ -4,9 +4,10 @@
       <h1>&lt;SPORTRAP&gt;</h1>
     </div>
     <div class="login">
-      <div><input  type="text" placeholder="login"></div>
-      <div><input  type="password" placeholder="senha"></div>
-      <div><input class="button" type="submit" value="ENTRAR"></div>
+      <div><input [(ngModel)]="usuario.email" type="text" placeholder="e-mail"></div>
+      <div><input [(ngModel)]="usuario.senha" type="password" placeholder="senha"></div>
+      <div><input class="button" type="submit" value="ENTRAR" (click)="login()"></div>
+
     </div>
 
     <div class="recsenha">
