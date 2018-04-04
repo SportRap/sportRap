@@ -1,0 +1,14 @@
+.home-header {
+  width: 100%;
+  padding: 20px;
+  background: #2c3e50;
+  display: flex;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  padding: 10px;
+}
