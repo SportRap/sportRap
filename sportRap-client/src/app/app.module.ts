@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { TelainicialComponent } from './telainicial/telainicial.component';
+import { HomeComponent } from './home/home.component';
+
+import {routing} from './app.route';
 
 
 @NgModule({
@@ -15,12 +18,14 @@ import { TelainicialComponent } from './telainicial/telainicial.component';
     AppComponent,
     LoginComponent,
     CadastrarComponent,
-    TelainicialComponent
+    TelainicialComponent,
+    HomeComponent
   ],
   imports: [
     HttpModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

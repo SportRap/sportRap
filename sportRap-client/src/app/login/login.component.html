@@ -6,7 +6,7 @@
     <div class="login">
       <div><input [(ngModel)]="usuario.email" type="text" placeholder="e-mail"></div>
       <div><input [(ngModel)]="usuario.senha" type="password" placeholder="senha"></div>
-      <div><input class="button" type="submit" value="ENTRAR" (click)="login()"></div>
+      <div><input [routerLink] = "['home']" class="button" type="submit" value="ENTRAR" (click)="login()"></div>
 
     </div>
 
