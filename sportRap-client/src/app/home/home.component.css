@@ -1,10 +1,19 @@
-.navbar-nav {
-  text-align: center;
+.navbar {
+  background-color: #2f3542 !important;
+}
+.navbar-brand {
+  color: #eccc68 !important;
 }
 
+.navbar-nav {
+  align-items: center;
+  text-align: center;
+}
 .navbar-nav li {
-  padding-left: 1.25rem; 
+  padding-left: 1.25rem;
+  color: #FFF;
 }
  .navbar-nav li a {
    padding: .25rem;
+   color: #FFF;
  }

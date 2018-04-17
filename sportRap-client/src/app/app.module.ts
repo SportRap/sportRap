@@ -9,8 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { TelainicialComponent } from './telainicial/telainicial.component';
 import { HomeComponent } from './home/home.component';
+import { EventoComponent } from './evento/evento.component';
 
 import {routing} from './app.route';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import {routing} from './app.route';
     LoginComponent,
     CadastrarComponent,
     TelainicialComponent,
-    HomeComponent
+    HomeComponent,
+    EventoComponent
   ],
   imports: [
     HttpModule,
