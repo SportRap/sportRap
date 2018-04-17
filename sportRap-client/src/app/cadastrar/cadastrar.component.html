@@ -4,28 +4,27 @@
       <br>
       <h3>Brilhe nas competições<br> Cadastre-se, é de graça!</h3>
       <form>
-        <br>Nome<br>
-        <input type="text" name="firstname">
-
-        <br><br>Sobrenome<br>
-        <input type="text" name="lastname">
-
-        <br><br>E-mail<br>
-        <input type="text" name="firstname">
-
-        <br><br>Senha(6 ou mais caracteres)<br>
-        <input type="password" name="lastname">
-
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" name="firstname" class="form-control" placeholder="nome..">
+        </div>
+        <div class="form-group">
+          <label for="sobrenome">Sobrenome</label>
+          <input type="text" name="lastname" class="form-control" placeholder="sobrenome..">
+        </div>
+        <div class="form-group">
+          <label for="email">e-mail</label>
+          <input type="email" name="email" class="form-control" placeholder="email@seuprovedor.com">
+        </div>
+        <div class="form-group">
+          <label for="nome">Senha</label>
+          <input type="password" name="password" class="form-control" placeholder="digite sua senha (6 ou mais caracteres)">
+        </div>
         <br><p>
         Ao clicar em Cadastre-se você aceita o Contrato de
         Usuário e Termos de Condições de Uso.</p>
 
-
-        <input type="submit" value="Cadastre-se agora" ng-model="myVar">
-        <div [hidden]="!myVar">
-          <h1>Welcome</h1>
-          <p>Welcome to my home.</p>
-        </div>
+        <button type="submit" class="btn btn-warning" class="form-control">Cadastre-se agora</button>
       </form>
     </div>
   </div>
