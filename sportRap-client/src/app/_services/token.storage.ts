@@ -21,4 +21,10 @@ export class TokenStorage {
   public getToken(): string {
     return sessionStorage.getItem(TOKEN_KEY);
   }
+
+  public isLoged(): boolean {
+    return this.getToken() != null;
+  }
+
+
 }

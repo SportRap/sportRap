@@ -15,6 +15,7 @@ export class AuthService implements OnInit{
                 private token: TokenStorage) {
         // Atribui o token se ele estiver salvo no local storage
 
+
     }
 
     ngOnInit() {
