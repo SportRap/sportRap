@@ -1,9 +1,9 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AuthService } from "./login/auth.service";
-import { HttpModule } from '@angular/http';
 import { AuthService } from "./_services/auth.service";
+import { HttpModule } from '@angular/http';
+import { TokenStorage } from './_services/token.storage'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -31,7 +31,7 @@ import {routing} from './app.route';
     FormsModule,
     routing
   ],
-  providers: [AuthService],
+  providers: [AuthService,TokenStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
