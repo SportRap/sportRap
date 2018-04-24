@@ -21,10 +21,12 @@ export class AuthService implements OnInit{
     ngOnInit() {
       this.token.signOut();
       var currentUser = JSON.parse(this.token.getToken());
-      console.log(currentUser);
+      console.log("ngOnInit",currentUser);
     }
 
     login(username, password): Observable<boolean> {
+
+
 
         let body = JSON.stringify({ username: username, password: password });
 
@@ -49,7 +51,7 @@ export class AuthService implements OnInit{
 
     logout(): void {
         // Limpa o token removendo o usuário do local store para efetuar o logout
-        this.token = null;
+        this.token.signOut();
         localStorage.removeItem('currentUser');
     }
 }
