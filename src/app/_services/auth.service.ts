@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class AuthService implements OnInit{
 
-    private url = 'http://localhost:8000/login';
+    private url = 'http://sportrap-app.herokuapp.com/login';
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private options = new RequestOptions({ headers: this.headers });
 
