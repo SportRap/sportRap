@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    console.log()
     if(!this.token.isLoged()){
       this.router.navigate(['']);
     }
