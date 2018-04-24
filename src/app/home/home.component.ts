@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorage } from '../_services/token.storage';
+import { AuthService } from "../_services/auth.service";
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private token: TokenStorage,
+              private authService: AuthService,
               private route: ActivatedRoute,
               private router: Router) { }
 
@@ -18,6 +20,11 @@ export class HomeComponent implements OnInit {
     if(!this.token.isLoged()){
       this.router.navigate(['']);
     }
+  }
+
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['']);
   }
 
 }
