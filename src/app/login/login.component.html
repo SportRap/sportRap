@@ -1,17 +1,8 @@
-<header class="top-bar">
-  <div class="container">
-    <div class="logo">
-      <h1>&lt;SPORTRAP&gt;</h1>
-    </div>
-    <div class="login">
-      <div><input [(ngModel)]="usuario.email" type="text" placeholder="e-mail"></div>
-      <div><input [(ngModel)]="usuario.senha" type="password" placeholder="senha"></div>
-      <div><input class="button" type="submit" value="ENTRAR" (click)="login()"></div>
-
-    </div>
-
-    <div class="recsenha">
-      <a href="#">Esqueceu sua senha?</a>
-    </div>
-  </div>
-</header>
+<div class="form-group">
+  <label for="exampleInputEmail1" class="text-uppercase">Usuário</label>
+  <input class="form-control"  type="text" placeholder="e-mail">
+</div>
+<div class="form-group">
+  <label for="exampleInputPassword1" class="text-uppercase">Senha</label>
+  <input class="form-control" type="password" placeholder="senha">
+</div>

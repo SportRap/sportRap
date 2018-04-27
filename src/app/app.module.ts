@@ -15,7 +15,6 @@ import { EventoComponent } from './evento/evento.component';
 import {routing} from './app.route';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
