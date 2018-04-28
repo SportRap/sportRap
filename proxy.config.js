@@ -2,7 +2,7 @@ const proxy = [
   {
     context: '/*',
     target: 'http://sportrap-app.herokuapp.com/login',
-    pathRewrite: {'^/api' : ''}
+    pathRewrite: {'^/*' : ''}
   }
 ];
 module.exports = proxy;
