@@ -1,6 +1,6 @@
 const proxy = [
   {
-    context: '/api',
+    context: '/*',
     target: 'http://sportrap-app.herokuapp.com/login',
     pathRewrite: {'^/api' : ''}
   }

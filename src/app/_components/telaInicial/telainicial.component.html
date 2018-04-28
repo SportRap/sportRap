@@ -1,0 +1,56 @@
+<div class="logo">
+  <span style="color:#eccc68;">S</span>PORTRAP
+</div>
+<div class="cont">
+  <div class="form sign-in">
+    <h2>Bem vindo,</h2>
+    <form>
+      <label>
+        <span>Usuario</span>
+        <input name="email" type="text" [(ngModel)]="usuario.email" />
+      </label>
+      <label>
+        <span>Senha</span>
+        <input name="senha" type="password" [(ngModel)]="usuario.senha " />
+      </label>
+      <p class="forgot-pass">Esqueceu a senha?</p>
+      <button type="submit" class="submit" (click) = "login()">Entrar</button>
+    </form>
+  </div>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>Novo aqui?</h2>
+        <p>Cadastre-se e se aventure em um mundo de competições!</p>
+      </div>
+      <div class="img__text m--in">
+        <h2>Um de nós?</h2>
+        <p>Entre, e divirta-se !</p>
+      </div>
+      <div class="img__btn">
+        <span class="m--up">Cadastre-se</span>
+        <span class="m--in">Entre</span>
+      </div>
+    </div>
+    <div class="form sign-up">
+      <h2>Hora de se sentir em casa,</h2>
+      <label>
+        <span>Nome</span>
+        <input type="text" />
+      </label>
+      <label>
+        <span>Sobrenome</span>
+        <input type="text" />
+      </label>
+      <label>
+        <span>E-mail</span>
+        <input type="email" />
+      </label>
+      <label>
+        <span>Senha ( 6 ou mais caracteres)</span>
+        <input type="password"/>
+      </label>
+      <button type="button" class="submit">Cadastre-se</button>
+    </div>
+  </div>
+</div>

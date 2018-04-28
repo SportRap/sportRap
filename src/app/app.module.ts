@@ -6,11 +6,9 @@ import { HttpModule } from '@angular/http';
 import { TokenStorage } from './_services/token.storage'
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { TelainicialComponent } from './telainicial/telainicial.component';
-import { HomeComponent } from './home/home.component';
-import { EventoComponent } from './evento/evento.component';
+import { TelainicialComponent } from './_components/telainicial/telainicial.component';
+import { HomeComponent } from './_components/home/home.component';
+import { EventoComponent } from './_components/evento/evento.component';
 
 import {routing} from './app.route';
 
@@ -18,8 +16,6 @@ import {routing} from './app.route';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    CadastrarComponent,
     TelainicialComponent,
     HomeComponent,
     EventoComponent
