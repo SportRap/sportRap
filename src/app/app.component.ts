@@ -7,7 +7,7 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'SportRap';
+  title = 'SportRap // SPORTS';
 
   public ngOnInit(){
     $(document).ready(function(){

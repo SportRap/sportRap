@@ -1,3 +1,4 @@
+import { DashboardModule } from './_components/dashboard/dashboard.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,8 +8,6 @@ import { TokenStorage } from './_services/token.storage'
 
 import { AppComponent } from './app.component';
 import { TelainicialComponent } from './_components/telainicial/telainicial.component';
-import { HomeComponent } from './_components/home/home.component';
-import { EventoComponent } from './_components/evento/evento.component';
 
 import {routing} from './app.route';
 
@@ -16,15 +15,15 @@ import {routing} from './app.route';
 @NgModule({
   declarations: [
     AppComponent,
-    TelainicialComponent,
-    HomeComponent,
-    EventoComponent
+    TelainicialComponent
   ],
   imports: [
     HttpModule,
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    DashboardModule
+
   ],
   providers: [AuthService,TokenStorage],
   bootstrap: [AppComponent]

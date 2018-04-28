@@ -5,16 +5,21 @@ import { Router, ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
   constructor(private token: TokenStorage,
               private authService: AuthService,
               private route: ActivatedRoute,
               private router: Router) { }
+
+
+  logout(){
+    this.authService.logout();
+  }
 
   ngOnInit() {
     if(!this.token.isLoged()){
@@ -39,9 +44,4 @@ export class HomeComponent implements OnInit {
       });
   }); 
   }
-
-  logout(){
-    this.authService.logout();
-  }
-
 }

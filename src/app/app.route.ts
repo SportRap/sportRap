@@ -1,12 +1,12 @@
+import { DashboardComponent } from './_components/dashboard/dashboard.component';
 import {RouterModule, Routes} from  '@angular/router';
 
 import {TelainicialComponent} from './_components/telainicial/telainicial.component';
-import { HomeComponent } from './_components/home/home.component';
 
 const appRoutes : Routes = [
 
   {path: '', component : TelainicialComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'dashboard', component: DashboardComponent}
 ];
 
 

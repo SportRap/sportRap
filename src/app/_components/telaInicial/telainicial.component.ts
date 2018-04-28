@@ -23,7 +23,7 @@ export class TelainicialComponent implements OnInit {
         .subscribe(
             data => {
                 console.log(data)
-                this.router.navigate(['home']);
+                this.router.navigate(['dashboard']);
             },
             error => {
               console.log(error)
