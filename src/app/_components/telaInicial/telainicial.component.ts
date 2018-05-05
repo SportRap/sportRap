@@ -31,5 +31,4 @@ export class TelainicialComponent implements OnInit {
                 this.loading = false;*/
             });
   }
-
 }
