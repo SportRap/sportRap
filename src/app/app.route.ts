@@ -1,7 +1,7 @@
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
 import {RouterModule, Routes} from  '@angular/router';
 
-import {TelainicialComponent} from './_components/telainicial/telainicial.component';
+import {TelainicialComponent} from './_components/telaInicial/telainicial.component';
 
 const appRoutes : Routes = [
 

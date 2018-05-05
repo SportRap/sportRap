@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 import { TokenStorage } from './_services/token.storage'
 
 import { AppComponent } from './app.component';
-import { TelainicialComponent } from './_components/telainicial/telainicial.component';
+import { TelainicialComponent } from './_components/telaInicial/telainicial.component';
 
 import {routing} from './app.route';
 
