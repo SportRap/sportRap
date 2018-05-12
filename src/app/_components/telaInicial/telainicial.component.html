@@ -50,7 +50,7 @@
 
         <div class="form sign-up">
             <h2>Hora de se sentir em casa,</h2>
-            <form #form="ngForm" (ngSubmit)="register()" novalidate>
+            <form #form="ngForm" (ngSubmit)="buscaEmailBanco()" novalidate>
                 <label>
                     <span>Nome Completo</span>
                     <input type="text" [(ngModel)]="user.nomeCompleto" name="nomeCompleto" class="form-control">

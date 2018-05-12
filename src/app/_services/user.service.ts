@@ -17,5 +17,9 @@ export class UserService {
     return this.http.post(`${SPORTRAP_API}/users/sign-up`, user);
   }
 
+  findByEmail(user: User){
+    return this.http.get(`${SPORTRAP_API}/usuario/${user.email}`, );
+  }
+
   
 }

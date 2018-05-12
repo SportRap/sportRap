@@ -1,10 +1,9 @@
+import { User } from './../../model/user';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Usuario } from "./usuario";
 import { SharedService } from '../../_services/shared.service';
 import { UserService } from '../../_services/user.service';
 import { NgForm } from '@angular/forms';
-import { User } from '../../model/user';
 import { CurrentUser } from '../../model/currentUser';
 
 @Component({
@@ -21,7 +20,6 @@ export class TelainicialComponent implements OnInit {
   public shared: SharedService;
   public message: string;
 
-  public usuario: Usuario = new Usuario();
   constructor(private userService: UserService,
     private route: ActivatedRoute,
     private router: Router) {
@@ -53,8 +51,26 @@ export class TelainicialComponent implements OnInit {
     });
   }
 
+  buscaEmailBanco(){
+    this.userService.findByEmail(this.user).subscribe((responseApi: User) => {
+      //this.user = responseApi;
+      console.log("retorno =", responseApi);
+      if(responseApi == null){
+        console.log("dentro do if");
+        
+        this.register();
+      }else{
+        alert("Email ja cadastrado");
+      }
+
+    }, err => {
+      console.log(err);
+
+    });
+  }
+
   register() {
-    this.userService.create(this.user).subscribe((responseApi) => {
+    this.userService.create(this.user).subscribe((responseApi: User) => {
       console.log("gravou");
 
     }, err => {
