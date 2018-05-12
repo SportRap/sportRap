@@ -1,56 +1,94 @@
 <div class="logo">
-  <span style="color:#eccc68;">S</span>PORTRAP
+    <span style="color:#eccc68;">S</span>PORTRAP
 </div>
 <div class="cont">
-  <div class="form sign-in">
-    <h2>Bem vindo,</h2>
-    <form>
-      <label>
-        <span>Usuario</span>
-        <input name="email" type="text" [(ngModel)]="usuario.email" />
-      </label>
-      <label>
-        <span>Senha</span>
-        <input name="senha" type="password" [(ngModel)]="usuario.senha " />
-      </label>
-      <p class="forgot-pass">Esqueceu a senha?</p>
-      <button type="submit" class="submit" (click) = "login()">Entrar</button>
-    </form>
-  </div>
-  <div class="sub-cont">
-    <div class="img">
-      <div class="img__text m--up">
-        <h2>Novo aqui?</h2>
-        <p>Cadastre-se e se aventure em um mundo de competições!</p>
-      </div>
-      <div class="img__text m--in">
-        <h2>Um de nós?</h2>
-        <p>Entre, e divirta-se !</p>
-      </div>
-      <div class="img__btn">
-        <span class="m--up">Cadastre-se</span>
-        <span class="m--in">Entre</span>
-      </div>
+    <div class="form sign-in">
+        <h2>Bem vindo,</h2>
+        <form #form="ngForm" (ngSubmit)="login()" novalidate>
+
+            <div [ngClass]="getFormGroupClass(email.invalid,email.dirty)">
+
+                <label>
+                    <span>Email</span>
+                    <input type="email" [(ngModel)]="user.email" name="email" class="form-control" id="inputEmail" #email="ngModel" email>
+
+                    <!--input name="email" type="text" [(ngModel)]="usuario.email" /-->
+                </label>
+                <span class="help-block" *ngIf="email.invalid  && email.dirty">Email is invalid </span>
+            </div>
+
+            <div [ngClass]="getFormGroupClass(password.invalid,password.dirty)">
+                <label>
+                    <span>Senha</span>
+                    <input type="password" [(ngModel)]="user.senha" name="password" class="form-control" id="inputPassword" #password="ngModel"
+                        required>
+                    <!--input name="senha" type="password" [(ngModel)]="usuario.senha " /-->
+                </label>
+                <span class="help-block" *ngIf="password.invalid && password.dirty">Password is required</span>
+            </div>
+
+            <p class="forgot-pass">Esqueceu a senha?</p>
+            <button type="submit" class="submit">Entrar</button>
+        </form>
+
     </div>
-    <div class="form sign-up">
-      <h2>Hora de se sentir em casa,</h2>
-      <label>
-        <span>Nome</span>
-        <input type="text" />
-      </label>
-      <label>
-        <span>Sobrenome</span>
-        <input type="text" />
-      </label>
-      <label>
-        <span>E-mail</span>
-        <input type="email" />
-      </label>
-      <label>
-        <span>Senha ( 6 ou mais caracteres)</span>
-        <input type="password"/>
-      </label>
-      <button type="button" class="submit">Cadastre-se</button>
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
+                <h2>Novo aqui?</h2>
+                <p>Cadastre-se e se aventure em um mundo de competições!</p>
+            </div>
+            <div class="img__text m--in">
+                <h2>Um de nós?</h2>
+                <p>Entre, e divirta-se !</p>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">Cadastre-se</span>
+                <span class="m--in">Entre</span>
+            </div>
+        </div>
+
+        <div class="form sign-up">
+            <h2>Hora de se sentir em casa,</h2>
+            <form #form="ngForm" (ngSubmit)="register()" novalidate>
+                <label>
+                    <span>Nome Completo</span>
+                    <input type="text" [(ngModel)]="user.nomeCompleto" name="nomeCompleto" class="form-control">
+                </label>
+                <label>
+                    <span>Nome de Usuario</span>
+                    <input type="text" [(ngModel)]="user.nomeUsuario" name="nomeUsuario" class="form-control">
+                </label>
+                <label>
+                    <span>E-mail</span>
+                    <input type="text" [(ngModel)]="user.email" name="email" class="form-control">
+                </label>
+                <label>
+                    <span>Senha ( 6 ou mais caracteres)</span>
+                    <input type="password" [(ngModel)]="user.senha" name="senha" class="form-control">
+                </label>
+                <label>
+                    <span>Data de Nascimento</span>
+                    <input type="Date" [(ngModel)]="user.dataNascimento" name="dataNascimento" class="form-control">
+                </label>
+                <label>
+                    <span>Esporte Favorito</span>
+                    <select [(ngModel)]="user.esporteFavorito"   name="esporteFavorito" class="form-control" >
+                        <option>Basquete de quadra</option>
+                        <option>Futebol</option>
+                        <option>Vôlei de quadra</option>
+                        <option>Futsal</option>
+                        <option>Tênis de quadra</option>
+                        <option>Tênis de mesa</option>
+                    </select>
+                </label>
+                <label [hidden]="true">
+                    <span>Foto</span>
+                    <input type="text" [(ngModel)]="user.fotoUsuario" name="fotoUsuario" class="form-control">
+                </label>
+
+                <button type="submit" class="submit">Cadastre-se</button>
+            </form>
+        </div>
     </div>
-  </div>
 </div>

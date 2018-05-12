@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenStorage } from '../../_services/token.storage';
-import { AuthService } from "../../_services/auth.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
+import { SharedService } from '../../_services/shared.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,20 +10,21 @@ import * as $ from 'jquery';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private token: TokenStorage,
-              private authService: AuthService,
+  public shared : SharedService;
+
+  constructor(
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router){
+                this.shared = SharedService.getInstance();
+               }
 
 
   logout(){
-    this.authService.logout();
+    this.shared.logout();    
+    this.router.navigate(['']);
   }
 
-  ngOnInit() {
-    if(!this.token.isLoged()){
-      this.router.navigate(['']);
-    }
+  ngOnInit() {  
     //Funcao do toggle do menu, e para o menu mobile !
     $(document).ready(function () {
       $('.nav-dropdown-toggle').on('click', function (e) {
