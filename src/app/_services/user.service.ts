@@ -10,7 +10,10 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   login(user: User){
+    console.log(`${SPORTRAP_API}/api/auth`,user);
     return this.http.post(`${SPORTRAP_API}/api/auth`,user);
+    
+    
   }
 
   create(user: User){
