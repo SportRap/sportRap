@@ -1,1 +1,23 @@
-<p>works pica me cu profile</p>
+<form (click)="ngOnSubmit()">
+  <div class="form-group">
+    <label>Nome</label>
+    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" [(ngModel)]="user.nomeCompleto">
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" [(ngModel)]="user.nomeUsuario">
+  </div>
+  <div class="form-group">
+    <label>E-mail</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email">
+  </div>
+  <div class="form-group">
+    <label>Data Nascimento</label>
+    <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" [(ngModel)]="user.dataNascimento">
+  </div>
+  <div class="form-group">
+    <label>Esporte favorito</label>
+    <input type="text" class="form-control" id="esporteFavorito" name="esporteFavorito" [(ngModel)]="user.esporteFavorito">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

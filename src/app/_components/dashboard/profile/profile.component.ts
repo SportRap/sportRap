@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { SharedService } from '../../../_services/shared.service';
+import { User } from '../../../model/user';
+import { UserService } from '../../../_services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,15 +10,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  id: number;
-  private sub: any;
 
-  constructor(private route: ActivatedRoute) { }
+  public shared: SharedService
+  user: User
+
+
+  constructor(private route: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
-   });
+
+    this.shared = SharedService.getInstance();
+    this.user = this.shared.user;
+
+  }
+  ngOnSubmit() {
+    console.log(this.user)
+    this.userService.update(this.user);
   }
 
 }

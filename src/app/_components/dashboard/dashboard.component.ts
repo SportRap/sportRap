@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['']);
   }
   editProfile(){
-    this.router.navigate(['dashboard/profile',this.shared.user.id]);
+    this.router.navigate(['dashboard/profile']);
   }
 
   ngOnInit() {  

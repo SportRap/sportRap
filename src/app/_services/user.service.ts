@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { SPORTRAP_API } from './sportrap.api';
 import { User } from '../model/user';
 
@@ -7,22 +7,25 @@ import { User } from '../model/user';
 @Injectable()
 export class UserService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  login(user: User){
-    console.log(`${SPORTRAP_API}/api/auth`,user);
-    return this.http.post(`${SPORTRAP_API}/api/auth`,user);
-    
-    
+  login(user: User) {
+    console.log(`${SPORTRAP_API}/api/auth`, user);
+    return this.http.post(`${SPORTRAP_API}/api/auth`, user);
+
+
   }
 
-  create(user: User){
+  create(user: User) {
     return this.http.post(`${SPORTRAP_API}/users/sign-up`, user);
   }
 
-  findByEmail(user: User){
+  findByEmail(user: User) {
     return this.http.get(`${SPORTRAP_API}/usuario/${user.email}`, );
   }
+  update(user: User) {
+    console.log(user)
+    return console.log(this.http.post(`${SPORTRAP_API}/usuario/novo`, user));
+  }
 
-  
 }

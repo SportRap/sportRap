@@ -13,7 +13,7 @@ const homeRoutes: Routes = [
         path : 'novoEvento', component : DashboardEventoComponent ,canActivate: [AuthGuard]
     },
     {
-        path : 'profile/:id', component : ProfileComponent ,canActivate: [AuthGuard]
+        path : 'profile', component : ProfileComponent ,canActivate: [AuthGuard]
     }
   ] ,canActivate: [AuthGuard]}
 ];
