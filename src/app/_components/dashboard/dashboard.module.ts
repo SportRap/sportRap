@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: [
     DashboardComponent,
-    DashboardEventoComponent
+    DashboardEventoComponent,
+    ProfileComponent
   ]
 })
 export class DashboardModule { }
