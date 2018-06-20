@@ -7,6 +7,7 @@ import { User } from '../model/user';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import { SharedService } from './shared.service';
+import { Http } from '@angular/http';
 
 
 @Injectable()
@@ -40,6 +41,4 @@ export class UserService {
   findByEmail(user: User){
     return this.http.get(`${SPORTRAP_API}/usuario/${user.email}`, );
   }
-
-  
 }
