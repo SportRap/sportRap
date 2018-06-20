@@ -11,8 +11,8 @@ import {routing} from './app.route';
 import { UserService } from './_services/user.service';
 import { AuthGuard } from './_components/security/auth.guard';
 import { SharedService } from './_services/shared.service';
-import { AuthInterceptor } from './_components/security/auth.interceptor';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -34,10 +34,6 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
     UserService, 
     AuthGuard, 
     SharedService,
-    { provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    },
   ],
   bootstrap: [AppComponent]
 })

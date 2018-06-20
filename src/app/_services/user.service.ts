@@ -1,19 +1,36 @@
+import { CurrentUser } from './../model/currentUser';
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { SPORTRAP_API } from './sportrap.api';
 import { User } from '../model/user';
 
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map'
+import { SharedService } from './shared.service';
+
 
 @Injectable()
 export class UserService {
+  public shared: SharedService;
+  
+  constructor(private http: HttpClient){
+    this.shared = SharedService.getInstance();
+  }
 
-  constructor(private http: HttpClient) {}
-
-  login(user: User){
-    console.log(`${SPORTRAP_API}/api/auth`,user);
+  login2(user: User){
     return this.http.post(`${SPORTRAP_API}/api/auth`,user);
     
-    
+  }
+
+  login(user: User){
+    return this.http.post<any>(`${SPORTRAP_API}/api/auth`,user)
+    .map((currentUser: CurrentUser) => {
+            // login successful if there's a jwt token in the response
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            
+        this.shared.setLocalstorage(currentUser);
+        return currentUser;
+    });
   }
 
   create(user: User){

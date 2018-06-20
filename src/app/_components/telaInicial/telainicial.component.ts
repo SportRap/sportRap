@@ -32,21 +32,16 @@ export class TelainicialComponent implements OnInit {
   login() {
     this.message = '';
     this.userService.login(this.user).subscribe((userAuthentication: CurrentUser) => {
+      
+      if(this.shared.isLoggedIn()){
+        this.router.navigate(['dashboard']);
+      }
 
-      this.shared.token = userAuthentication.token;
-      this.shared.user = userAuthentication.user;
-      this.shared.showTemplate.emit(true);
-
-      console.log(this.shared.token)
-      console.log(this.shared.user)
-      console.log(this.shared.isLoggedIn());
-      this.router.navigate(['dashboard']);
+      
 
     }, err => {
       console.log("erro login ", err);
-
-      this.shared.token = null;
-      this.shared.user = null;
+      
       this.message = 'Erro ';
     });
   }
