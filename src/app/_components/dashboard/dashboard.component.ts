@@ -23,6 +23,9 @@ export class DashboardComponent implements OnInit {
     this.shared.logout();    
     this.router.navigate(['']);
   }
+  editProfile(){
+    this.router.navigate(['dashboard/profile']);
+  }
 
   ngOnInit() {  
     //Funcao do toggle do menu, e para o menu mobile !

@@ -1,6 +1,6 @@
 import { CurrentUser } from './../model/currentUser';
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { SPORTRAP_API } from './sportrap.api';
 import { User } from '../model/user';
 
@@ -17,6 +17,7 @@ export class UserService {
     this.shared = SharedService.getInstance();
   }
 
+<<<<<<< HEAD
   login2(user: User){
     return this.http.post(`${SPORTRAP_API}/api/auth`,user);
     
@@ -31,15 +32,27 @@ export class UserService {
         this.shared.setLocalstorage(currentUser);
         return currentUser;
     });
+=======
+  constructor(private http: HttpClient) { }
+
+  login(user: User) {
+    console.log(`${SPORTRAP_API}/api/auth`, user);
+    return this.http.post(`${SPORTRAP_API}/api/auth`, user);
+
+
+>>>>>>> adriel
   }
 
-  create(user: User){
+  create(user: User) {
     return this.http.post(`${SPORTRAP_API}/users/sign-up`, user);
   }
 
-  findByEmail(user: User){
+  findByEmail(user: User) {
     return this.http.get(`${SPORTRAP_API}/usuario/${user.email}`, );
   }
+  update(user: User) {
+    console.log(user)
+    return console.log(this.http.post(`${SPORTRAP_API}/usuario/novo`, user));
+  }
 
-  
 }
