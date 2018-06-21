@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { SharedService } from '../../../_services/shared.service';
 import { User } from '../../../model/user';
 import { UserService } from '../../../_services/user.service';
@@ -15,17 +14,23 @@ export class ProfileComponent implements OnInit {
   user: User
 
 
-  constructor(private route: ActivatedRoute, private userService: UserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
 
     this.shared = SharedService.getInstance();
-    this.user = this.shared.user;
+    this.user = this.shared.currentUser.user;
+    console.log(this.user)
 
   }
-  ngOnSubmit() {
-    console.log(this.user)
-    this.userService.update(this.user);
+  ngOnSubmit(user: User) {
+    this.userService.update(this.user).subscribe((responseApi: User) => {
+      console.log("gravou");
+
+    }, err => {
+      console.log(err);
+
+    });
   }
 
 }
