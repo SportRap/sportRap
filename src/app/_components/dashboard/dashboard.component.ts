@@ -1,7 +1,10 @@
+import { EventoService } from './../../_services/evento.service';
+import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
 import { SharedService } from '../../_services/shared.service';
+import { Evento } from '../../model/evento';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,11 +14,14 @@ import { SharedService } from '../../_services/shared.service';
 export class DashboardComponent implements OnInit {
 
   public shared : SharedService;
-
+  listEventos : Evento[];
+  service : EventoService;
   constructor(
               private route: ActivatedRoute,
-              private router: Router){
+              private router: Router,
+              service : EventoService){
                 this.shared = SharedService.getInstance();
+                this.service = service;
                }
 
 
@@ -25,6 +31,11 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {  
+
+    this.service.lista().subscribe(res => {
+      this.listEventos = res;
+    });
+
     //Funcao do toggle do menu, e para o menu mobile !
     $(document).ready(function () {
       $('.nav-dropdown-toggle').on('click', function (e) {
