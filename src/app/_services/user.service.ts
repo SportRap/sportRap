@@ -17,7 +17,6 @@ export class UserService {
     this.shared = SharedService.getInstance();
   }
 
-<<<<<<< HEAD
   login2(user: User){
     return this.http.post(`${SPORTRAP_API}/api/auth`,user);
     
@@ -32,15 +31,6 @@ export class UserService {
         this.shared.setLocalstorage(currentUser);
         return currentUser;
     });
-=======
-  constructor(private http: HttpClient) { }
-
-  login(user: User) {
-    console.log(`${SPORTRAP_API}/api/auth`, user);
-    return this.http.post(`${SPORTRAP_API}/api/auth`, user);
-
-
->>>>>>> adriel
   }
 
   create(user: User) {
