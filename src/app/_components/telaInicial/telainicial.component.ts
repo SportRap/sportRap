@@ -16,7 +16,8 @@ export class TelainicialComponent implements OnInit {
   @ViewChild("form")
   form: NgForm;
 
-  public user = new User('', '', '', '', '', '', '');
+
+  public user = new User(null, '', '', '', '', '', '', '');
   public shared: SharedService;
   public message: string;
 

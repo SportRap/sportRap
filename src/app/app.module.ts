@@ -12,6 +12,7 @@ import { UserService } from './_services/user.service';
 import { AuthGuard } from './_components/security/auth.guard';
 import { SharedService } from './_services/shared.service';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DashboardListComponent } from './_components/dashboard/dashboard-list/dashboard-list.component';
 
 
 
