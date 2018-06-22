@@ -12,6 +12,7 @@ import { CurrentUser } from '../../model/currentUser';
   styleUrls: ['./telainicial.component.scss']
 })
 export class TelainicialComponent implements OnInit {
+  myVar: boolean = false;
 
   @ViewChild("form")
   form: NgForm;
@@ -68,7 +69,7 @@ export class TelainicialComponent implements OnInit {
   register() {
     this.userService.create(this.user).subscribe((responseApi: User) => {
       console.log("gravou");
-
+      this.myVar = true;
     }, err => {
       console.log(err);
 
@@ -83,17 +84,8 @@ export class TelainicialComponent implements OnInit {
     };
   }
 
-  /*login(){
-    this.authService.login(this.usuario.email, this.usuario.senha)
-        .subscribe(
-            data => {
-                console.log(data)
-                this.router.navigate(['dashboard']);
-            },
-            error => {
-              console.log(error)
-                this.alertService.error(error);
-                this.loading = false;
-            });
-  }*/
+  aviso(){
+    this.myVar = false;
+    this.router.navigate(['']);
+  }
 }

@@ -1,7 +1,7 @@
 <div class="logo">
     <span style="color:#eccc68;">S</span>PORTRAP
 </div>
-<div class="cont">
+<div class="cont" *ngIf="!myVar">
     <div class="form sign-in">
         <h2>Bem vindo,</h2>
         <form #form="ngForm" (ngSubmit)="login()" novalidate>
@@ -90,5 +90,13 @@
                 <button type="submit" class="submit">Cadastre-se</button>
             </form>
         </div>
+    </div>
+</div>
+
+<div class="cont" *ngIf="myVar">
+    <div class="inner">
+        <h2>Seja Bem Vindo! {{user.nomeCompleto}}</h2>
+        <h5>Seu cadastro foi realizado com sucesso</h5>
+        <button type="submit" class="submit" (click)="aviso()">Logar</button>
     </div>
 </div>

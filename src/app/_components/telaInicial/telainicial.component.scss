@@ -52,6 +52,12 @@ $diffRatio: ($contW - $imgW) / $contW;
     background: #fff;
 }
 
+.inner {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
 .form {
     position: relative;
     width: $formW;
