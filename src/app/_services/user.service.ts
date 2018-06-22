@@ -1,7 +1,8 @@
 import { CurrentUser } from './../model/currentUser';
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { SPORTRAP_API } from './sportrap.api';
+import { User2 } from '../model/user2';
 import { User } from '../model/user';
 
 import { Observable } from 'rxjs/Observable';
@@ -34,11 +35,17 @@ export class UserService {
     });
   }
 
-  create(user: User){
-    return this.http.post(`${SPORTRAP_API}/users/sign-up`, user);
+  create(user: User) {
+    return this.http.post(`${SPORTRAP_API}/usuario/novo`, user);
   }
 
-  findByEmail(user: User){
+  findByEmail(user: User) {
     return this.http.get(`${SPORTRAP_API}/usuario/${user.email}`, );
   }
+
+  update(user: User2) {
+    console.log(user)
+    return this.http.post(`${SPORTRAP_API}/usuario/salvar`, user);
+  }
+
 }

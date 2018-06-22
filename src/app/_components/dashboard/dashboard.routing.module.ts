@@ -1,5 +1,6 @@
 import { DashboardListComponent } from './dashboard-list/dashboard-list.component';
 import { DashboardEventoComponent } from './dashboard-evento/dashboard-evento.component';
+import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,6 +15,9 @@ const homeRoutes: Routes = [
     },
     { 
         path : 'novoEvento', component : DashboardEventoComponent ,canActivate: [AuthGuard]
+    },
+    {
+        path : 'profile', component : ProfileComponent ,canActivate: [AuthGuard]
     }
   ] ,canActivate: [AuthGuard]}
 ];

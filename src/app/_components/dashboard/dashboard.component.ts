@@ -29,6 +29,9 @@ export class DashboardComponent implements OnInit {
     this.shared.logout();    
     this.router.navigate(['']);
   }
+  editProfile(){
+    this.router.navigate(['dashboard/profile']);
+  }
 
   ngOnInit() {  
 
