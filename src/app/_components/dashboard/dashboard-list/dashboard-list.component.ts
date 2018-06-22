@@ -1,3 +1,5 @@
+import { Evento } from './../../../model/evento';
+import { EventoService } from './../../../_services/evento.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardListComponent implements OnInit {
 
-  constructor() { }
+  esporteEscolhido : string;
+  listaEventos : Evento[];
+  service : EventoService;
+
+  constructor( service : EventoService) {
+    this.service = service;
+   }
 
   ngOnInit() {
+    this.service.lista().subscribe(res => {
+      this.listaEventos = res;
+    });
   }
-
 }

@@ -14,15 +14,13 @@ import { Evento } from '../../model/evento';
 export class DashboardComponent implements OnInit {
 
   public shared : SharedService;
-  listEventos : Evento[];
-  service : EventoService;
+  nomeUsuario : string;
   constructor(
               private route: ActivatedRoute,
               private router: Router,
               service : EventoService){
                 this.shared = SharedService.getInstance();
-                this.service = service;
-               }
+              }
 
 
   logout(){
@@ -33,11 +31,12 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['dashboard/profile']);
   }
 
-  ngOnInit() {  
+  ngOnInit() {
+    
+    this.router.navigate(['dashboard/lista']);
+    //Gambi da brava aqui, esse demonio de rota do angular 6! xD
 
-    this.service.lista().subscribe(res => {
-      this.listEventos = res;
-    });
+    this.nomeUsuario = this.shared.currentUser.user.nomeCompleto;
 
     //Funcao do toggle do menu, e para o menu mobile !
     $(document).ready(function () {

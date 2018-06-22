@@ -11,7 +11,7 @@ const homeRoutes: Routes = [
 
   { path: 'dashboard', component: DashboardComponent, children : [
     { 
-      path : '', component : DashboardListComponent ,canActivate: [AuthGuard]
+      path : 'lista', component : DashboardListComponent ,canActivate: [AuthGuard],
     },
     { 
         path : 'novoEvento', component : DashboardEventoComponent ,canActivate: [AuthGuard]

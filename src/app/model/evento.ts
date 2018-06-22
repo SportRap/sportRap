@@ -6,5 +6,5 @@ export class Evento {
      dataEvento : string;
      localEvento : string;
      criadorEvento : User;
-     esporteEscolhido : string;
+     esporteEscolhidoEnum : string;
 }

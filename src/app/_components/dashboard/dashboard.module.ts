@@ -23,7 +23,7 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     DashboardComponent,
     DashboardEventoComponent,
-    ProfileComponent
+    ProfileComponent,
     DashboardListComponent
   ],
   providers : [EventoService]

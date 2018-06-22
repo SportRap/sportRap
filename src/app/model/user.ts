@@ -8,5 +8,5 @@ export class User {
                 public email: string,
                 public dataNascimento: string,
                 public esporteFavorito: string
-                ) {
+                ) {}
 }

@@ -46,6 +46,11 @@ export class EventoService{
             .map(res => res.json());
     }
 
+    buscaEnumValor(){
+        return this.http.get(`${SPORTRAP_API}/evento/descricaoEsportes`)
+        .map(res => res.json());
+    }
+
 }
 
 export class MensagemCadastro {

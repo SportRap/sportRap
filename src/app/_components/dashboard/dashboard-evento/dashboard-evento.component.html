@@ -1,49 +1,50 @@
+<h3> Cadastro de evento:</h3>
 <form [formGroup]="formularioEvento" (submit)="cadastrar($event)">
-    <div class="form-group">
-        <label for="nomeEvento">Nome do evento:</label>
-        <input type="text" class="form-control"  
-        name="nomeEvento" 
-        formControlName="nomeEvento" 
-        [(ngModel)]="evento.eventoNome">
-    </div>
     <div class="form-row">
-        <div class="form-group">
-            <label for="descricaoEvento">Descricao do Evento:</label>
-            <input type="text" class="form-control"
-            name="descricaoEvento" 
-            formControlName="descricaoEvento" 
-            [(ngModel)]="evento.descricaoEvento">
+        <div class="form-group col-md-6">
+            <label for="nomeEvento">Nome do evento:</label>
+            <input type="text" class="form-control" required autocomplete="off"
+            name="nomeEvento" 
+            formControlName="nomeEvento" 
+            [(ngModel)]="evento.nomeEvento">
         </div>
-        <div class="form-group">
-            <label for="dataEvento">Data do evento</label>
-            <input type="date" class="form-control"
-            name="dataEvento"
-            formControlName="dataEvento" 
+        <div class="form-group col-md-6">
+            <label for="dataEvento">Data:</label>
+            <input type="datetime-local" class="form-control"
+            name="dataEvento" 
+            formControlName="dataEvento"
             [(ngModel)]="evento.dataEvento">
         </div>
     </div>
+    <div class="form-group">
+        <label for="descricaoEvento">Descricao do Evento:</label>
+        <input type="text" class="form-control"
+        name="descricaoEvento" 
+        formControlName="descricaoEvento" 
+        [(ngModel)]="evento.descricaoEvento">
+    </div>
     <div class="form-row">
-        <div class="form-group">
-            <label for="localEvento">Local</label>
+        <div class="form-group col-md-6">
+            <label for="localEvento">Local:</label>
             <input type="text" class="form-control"
-             name="localEvento" 
-             formControlName="localEvento"
-              [(ngModel)]="evento.localEvento">
+            name="localEvento" 
+            formControlName="localEvento"
+            [(ngModel)]="evento.localEvento">
         </div>
-        <div class="form-group">
-           <label for="esporteEscolhido">Esporte</label>
-           <select [(ngModel)]="evento.esporteEscolhido"
-            name="esporteFavorito" class="form-control"
-            formControlName="esporteEscolhido" 
+        <div class="form-group col-md-6">
+            <label for="esporteEscolhidoEnum">Esporte:</label>
+            <select [(ngModel)]="evento.esporteEscolhidoEnum"
+            class="form-control"
+            formControlName="esporteEscolhidoEnum" 
             class="form-control">
-                <option value="BASQUETE">Basquete de quadra</option>
+                <option value="BASQUETE">Basquete</option>
                 <option value="FUTEBOL">Futebol</option>
-                <option value="VOLEI_DE_QUADRA" >Vôlei de quadra</option>
-                <option value="FUTSAL" >Futsal</option>
-                <option value="TENIS_DE_QUADRA" >Tênis de quadra</option>
-                <option value="TENIS_-DE_MESA">Tênis de mesa</option>
+                <option value="VOLEI_QUADRA">Volei de quadra</option>
+                <option value="FUTSAL">Futsal</option>
+                <option value="TENIS_QUADRA">Tenis de quadra</option>
+                <option value="TENIS_MESA">Tenis de mesa</option>
             </select>
         </div>
     </div>
-    <button class="btn btn-success" type="submit">Cadastrar evento</button>
+    <button class="btn btn-warning" type="submit">Cadastrar evento</button>
 </form>

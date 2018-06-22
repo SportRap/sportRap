@@ -1,3 +1,22 @@
-<p>
-  dashboard-list works!
-</p>
+<table class="table">
+    <thead>
+      <tr style="background-color: #eccc68;">
+        <th scope="col">N.Evento</th>
+        <th scope="col">Descricao</th>
+        <th scope="col">Local</th>
+        <th scope="col">Data</th>
+        <th scope="col">Participantes</th>
+        <th scope="col">Esporte</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of listaEventos">
+        <td>{{evento.id}}</td>
+        <td>{{evento.descricaoEvento}}</td>
+        <td>{{evento.localEvento}}</td>
+        <td>{{evento.dataEvento | date: 'shortTime'}}</td>
+        <td>{{10}}</td>
+        <td>{{evento.esporteEscolhidoEnum | json}}</td>
+      </tr>
+    </tbody>
+  </table>

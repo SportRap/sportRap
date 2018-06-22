@@ -22,6 +22,7 @@ export class DashboardEventoComponent implements OnInit {
   router : Router;
   mensagem : string = '';
   shared : SharedService;
+  listaEnum : string;
 
 
   constructor(fb : FormBuilder, service : EventoService, router : Router, userService : UserService) {
@@ -35,7 +36,7 @@ export class DashboardEventoComponent implements OnInit {
       descricaoEvento : [''],
       dataEvento : [''],
       localEvento : [''],
-      esporteEscolhido : ['']
+      esporteEscolhidoEnum : ['']
     });
 
     this.evento.criadorEvento = new User(
@@ -51,6 +52,7 @@ export class DashboardEventoComponent implements OnInit {
    }
 
   ngOnInit() {
+
   }
 
   cadastrar(event){
@@ -58,7 +60,7 @@ export class DashboardEventoComponent implements OnInit {
     console.log(this.evento);
     this.service.cadastra(this.evento).subscribe(res => {
       this.evento = new Evento();
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['dashboard/lista']);
     }, erro => console.log(erro));
   }
 }

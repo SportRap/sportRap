@@ -17,8 +17,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="./imgs/avatar-1.png" class="avatar avatar-sm" alt="avatar">
-                    <span class="small ml-1 d-md-down-none">Marcos Eduardo Winiarski</span>
+                    <span class="small ml-3 d-md-down-none" style="font-size: 16px;">{{ nomeUsuario }}</span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
@@ -47,27 +46,27 @@
                     <li class="nav-title">Navegacao</li>
 
                     <li class="nav-item">
-                        <a routerLink = "''" class="nav-link active">
+                        <a routerLink = "lista" class="nav-link"  routerLinkActive="active">
                             <i class="fas fa-user"></i> Inicio
                         </a>
                     </li>
 
                     <li class="nav-item nav-dropdown">
-                        <a href="#" class="nav-link nav-dropdown-toggle">
+                        <a href="#" class="nav-link nav-dropdown-toggle" routerLinkActive="active"> 
                             <i class="fas fa-th-list"></i> Eventos <i class="fa fa-caret-left"></i>
                         </a>
 
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a routerLink = "novoEvento" class="nav-link">
+                                <a routerLink = "novoEvento" class="nav-link" routerLinkActive="active">
                                     <i class="fas fa-plus"></i> Criar
                                 </a>
                             </li>
                             <li class="nav-item">
-                                    <a href="layouts-fixed-sidebar.html" class="nav-link">
-                                        <i class="fas fa-users"></i> Meus eventos
-                                    </a>
-                                </li>
+                                <a href="layouts-fixed-sidebar.html" class="nav-link" routerLinkActive="active">
+                                    <i class="fas fa-users"></i> Meus eventos
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
