@@ -31,6 +31,8 @@ export class ProfileComponent implements OnInit {
       console.log(err);
 
     });
+    this.shared.currentUser.user = this.user;
+    this.shared.setLocalstorage(this.shared.currentUser);
   }
 
 }
