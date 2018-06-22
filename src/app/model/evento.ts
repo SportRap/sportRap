@@ -1,4 +1,5 @@
 import { User } from "./user";
+import { enumEsportes } from "./enumSportes";
 
 export class Evento {
      nomeEvento : string;
@@ -6,5 +7,7 @@ export class Evento {
      dataEvento : string;
      localEvento : string;
      criadorEvento : User;
-     esporteEscolhidoEnum : string;
+     esporteEscolhidoEnum : enumEsportes;
+     membrosTime1 : string[] = [];
+     membrosTime2 : string[] = [];
 }

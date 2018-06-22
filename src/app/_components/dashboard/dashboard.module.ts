@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ProfileComponent } from './profile/profile.component';
+import { EventContentComponent } from './event-content/event-content.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProfileComponent } from './profile/profile.component';
     DashboardComponent,
     DashboardEventoComponent,
     ProfileComponent,
-    DashboardListComponent
+    DashboardListComponent,
+    EventContentComponent
   ],
   providers : [EventoService]
 })

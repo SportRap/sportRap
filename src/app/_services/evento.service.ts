@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'
 import { Injectable } from '@angular/core';
 import { Evento } from '../model/evento';
+import { isObject } from 'util';
 
 @Injectable()
 export class EventoService{ 
@@ -23,6 +24,13 @@ export class EventoService{
         
         return this.http
         .post(`${SPORTRAP_API}/evento/novo`, evento)
+        .map(() => new MensagemCadastro('Evento incluído com sucesso !', true));  
+    }
+
+    update(evento : Evento): Observable<MensagemCadastro> {
+        
+        return this.http
+        .post(`${SPORTRAP_API}/evento/salvar`, evento)
         .map(() => new MensagemCadastro('Evento incluído com sucesso !', true));  
     }
 

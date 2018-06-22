@@ -1,22 +1,22 @@
-<table class="table">
-    <thead>
-      <tr style="background-color: #eccc68;">
-        <th scope="col">N.Evento</th>
-        <th scope="col">Descricao</th>
-        <th scope="col">Local</th>
-        <th scope="col">Data</th>
-        <th scope="col">Participantes</th>
-        <th scope="col">Esporte</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let evento of listaEventos">
-        <td>{{evento.id}}</td>
-        <td>{{evento.descricaoEvento}}</td>
-        <td>{{evento.localEvento}}</td>
-        <td>{{evento.dataEvento | date: 'shortTime'}}</td>
-        <td>{{10}}</td>
-        <td>{{evento.esporteEscolhidoEnum | json}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container-fluid">
+  <div class="row">
+      <div class="card col-sm-12 col-md-12 col-lg-3" style="width: 16rem; margin: 8px;"  *ngFor="let evento of listaEventos">
+          <div class="card-body">
+            <h5 class="card-title">{{evento.nomeEvento}}</h5>
+            <p class="card-text">{{evento.descricaoEvento}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{evento.esporteEscolhidoEnum.descricao}}</li>
+            <li class="list-group-item">{{evento.localEvento}}  <br> {{evento.dataEvento | date : 'dd/MM/yyyy hh:mm'}}</li>
+            <div class="card-body">
+              <h5 class="card-title text-center">Participantes</h5>
+              <p class="card-text text-center">10/10</p>
+            </div>
+          </ul>
+          <div class="card-body">
+            <button class="btn btn-warning" (click)="ingressaEvento(this.evento)">Ingressar</button>
+            <button class="btn btn-success" (click)="eventoOnClick(evento.id)">Visualizar</button>
+          </div>
+      </div>
+  </div>
+</div>

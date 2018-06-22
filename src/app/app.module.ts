@@ -16,10 +16,12 @@ import { DashboardListComponent } from './_components/dashboard/dashboard-list/d
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    TelainicialComponent
+    TelainicialComponent,
+
   ],
   imports: [
     HttpModule,

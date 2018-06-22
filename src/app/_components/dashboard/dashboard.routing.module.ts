@@ -3,8 +3,9 @@ import { DashboardEventoComponent } from './dashboard-evento/dashboard-evento.co
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { AuthGuard } from '../security/auth.guard';
+import { EventContentComponent } from './event-content/event-content.component';
 
 
 const homeRoutes: Routes = [
@@ -18,6 +19,9 @@ const homeRoutes: Routes = [
     },
     {
         path : 'profile', component : ProfileComponent ,canActivate: [AuthGuard]
+    },
+    {
+      path : 'event/:id', component : EventContentComponent ,canActivate: [AuthGuard]
     }
   ] ,canActivate: [AuthGuard]}
 ];
