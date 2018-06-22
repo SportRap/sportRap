@@ -17,7 +17,7 @@ export class TelainicialComponent implements OnInit {
   form: NgForm;
 
 
-  public user = new User(null, '', '', '', '', '', '', '');
+  public user = new User(null, '', '', '', '', '', null, null);
   public shared: SharedService;
   public message: string;
 
@@ -33,29 +33,29 @@ export class TelainicialComponent implements OnInit {
   login() {
     this.message = '';
     this.userService.login(this.user).subscribe((userAuthentication: CurrentUser) => {
-      
-      if(this.shared.isLoggedIn()){
+
+      if (this.shared.isLoggedIn()) {
         this.router.navigate(['dashboard']);
       }
 
-      
+
 
     }, err => {
       console.log("erro login ", err);
-      
+
       this.message = 'Erro ';
     });
   }
 
-  buscaEmailBanco(){
+  buscaEmailBanco() {
     this.userService.findByEmail(this.user).subscribe((responseApi: User) => {
       //this.user = responseApi;
       console.log("retorno =", responseApi);
-      if(responseApi == null){
+      if (responseApi == null) {
         console.log("dentro do if");
-        
+
         this.register();
-      }else{
+      } else {
         alert("Email ja cadastrado");
       }
 

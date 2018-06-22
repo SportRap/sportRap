@@ -1,3 +1,5 @@
+import { enumEsportes } from "./enumSportes";
+
 export class User2 {
     public id: number;
     constructor(
@@ -5,8 +7,8 @@ export class User2 {
         public nomeUsuario: string,
         public fotoUsuario: string,
         public email: string,
-        public dataNascimento: string,
-        public esporteFavorito: string
+        public dataNascimento: Date,
+        public esporteFavorito: enumEsportes
     ) {
     }
 }

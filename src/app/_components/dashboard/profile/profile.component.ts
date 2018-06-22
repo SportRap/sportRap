@@ -12,6 +12,8 @@ export class ProfileComponent implements OnInit {
 
   public shared: SharedService
   user: User
+  esportes: string[]=[];
+  public editable: boolean = true
 
 
   constructor(private userService: UserService) { }
@@ -21,6 +23,7 @@ export class ProfileComponent implements OnInit {
     this.shared = SharedService.getInstance();
     this.user = this.shared.currentUser.user;
     console.log(this.user)
+    this.edit();
 
   }
   ngOnSubmit(user: User) {
@@ -33,6 +36,19 @@ export class ProfileComponent implements OnInit {
     });
     this.shared.currentUser.user = this.user;
     this.shared.setLocalstorage(this.shared.currentUser);
+    this.editable = true;
   }
+  edit(): boolean {
+    return this.editable;
+  }
+  editar() {
+    this.editable = false;
+  }
+  // getEsportes() {
+  //   this.userService.getEsportes().map(res => res.json())
+  //     .subscribe(data => {
+  //       this.esportes = data;
+  //     });
+  // }
 
 }

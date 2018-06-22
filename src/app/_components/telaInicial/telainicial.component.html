@@ -73,13 +73,13 @@
                 </label>
                 <label>
                     <span>Esporte Favorito</span>
-                    <select [(ngModel)]="user.esporteFavorito"   name="esporteFavorito" class="form-control" >
-                        <option>Basquete de quadra</option>
-                        <option>Futebol</option>
-                        <option>Vôlei de quadra</option>
-                        <option>Futsal</option>
-                        <option>Tênis de quadra</option>
-                        <option>Tênis de mesa</option>
+                    <select [(ngModel)]="user.esporteFavorito" name="esporteFavorito" class="form-control">
+                        <option value="BASQUETE">Basquete</option>
+                        <option value="FUTEBOL">Futebol</option>
+                        <option value="VOLEI_QUADRA">Volei de quadra</option>
+                        <option value="FUTSAL">Futsal</option>
+                        <option value="TENIS_QUADRA">Tenis de quadra</option>
+                        <option value="TENIS_MESA">Tenis de mesa</option>
                     </select>
                 </label>
                 <label [hidden]="true">

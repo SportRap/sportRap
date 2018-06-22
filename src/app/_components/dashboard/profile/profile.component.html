@@ -1,23 +1,31 @@
-<form (submit)="ngOnSubmit()">
+<form>
+  <button (click)="editar()" class="btn btn-success">Editar</button>
   <div class="form-group">
-    <label>Nome</label>
-    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" [(ngModel)]="user.nomeCompleto">
+    <label>Nome:</label>
+    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" [(ngModel)]="user.nomeCompleto" [disabled]="edit()">
   </div>
   <div class="form-group">
-    <label>Username</label>
-    <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" [(ngModel)]="user.nomeUsuario">
+    <label>Username:</label>
+    <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" [(ngModel)]="user.nomeUsuario" [disabled]="edit()">
   </div>
   <div class="form-group">
-    <label>E-mail</label>
-    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email">
+    <label>E-mail:</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" [disabled]="edit()">
   </div>
   <div class="form-group">
-    <label>Data Nascimento</label>
-    <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" [(ngModel)]="user.dataNascimento">
+    <label>Data Nascimento:</label>
+    <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" [(ngModel)]="user.dataNascimento" [disabled]="edit()">
   </div>
   <div class="form-group">
-    <label>Esporte favorito</label>
-    <input type="text" class="form-control" id="esporteFavorito" name="esporteFavorito" [(ngModel)]="user.esporteFavorito">
+    <label>Esporte favorito:</label>
+    <select [(ngModel)]="user.esporteFavorito" id="esporteFavorito" name="esporteFavorito" class="form-control"[disabled]="edit()">
+      <option value="BASQUETE">Basquete</option>
+      <option value="FUTEBOL">Futebol</option>
+      <option value="VOLEI_QUADRA">Volei de quadra</option>
+      <option value="FUTSAL">Futsal</option>
+      <option value="TENIS_QUADRA">Tenis de quadra</option>
+      <option value="TENIS_MESA">Tenis de mesa</option>
+    </select>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button class="btn btn-primary" (click)="ngOnSubmit()">Submit</button>
 </form>
